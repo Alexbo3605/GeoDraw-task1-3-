@@ -59,11 +59,20 @@ BaseObject* ArrayDataReader::read_Object()
 		obj->~BaseObject();
 		obj = nullptr;
 
-		/*ex.getError(); записати у лог файл*/
+		std::ofstream logFile(exeption_Log_Filename, std::ios::app);
+		if (logFile.is_open()) {
+			logFile << ex.getError() << std::endl;
+			logFile.close();
+		}
+
 	}
-	catch (EndOfFile& ex) {
-		std::cout << "End of file " << std::endl;
-		/*ex.getError(); записати у лог файл*/
+	catch (EndOfFile) {
+		
+		std::ofstream logFile(exeption_Log_Filename, std::ios::app);
+		if (logFile.is_open()) {
+			logFile <<"End of file"  << std::endl;
+			logFile.close();
+		}
 	}
 
 	return obj;

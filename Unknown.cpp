@@ -19,7 +19,7 @@ double Unknown::get_Data(const int num) const
 	if (num < m_size) {
 		return m_data[num];
 	}
-	/*return -1;*/
+	return THROW_ERR;
 }
 
 void Unknown::deserialize(DataProvider& dp, int size)

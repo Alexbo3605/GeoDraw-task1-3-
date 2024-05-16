@@ -1,6 +1,8 @@
 #pragma once
 
 #include <string>
+#include <chrono>
+#include <ctime>
 
 class EndOfFile
 {
@@ -15,7 +17,7 @@ public:
     ReadError(std::string error, int pos);
         
    
-    const char* getError();
+    std::string getError();
 
 private:
     std::string m_error;

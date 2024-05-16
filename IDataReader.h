@@ -3,6 +3,9 @@
 
 #include "ObjectFactory.h"
 #include "Exceptions.h"
+#include "Settings.h"
+
+#include <fstream>
 
 class IDataReader
 {

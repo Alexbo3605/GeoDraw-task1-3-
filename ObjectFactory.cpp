@@ -21,9 +21,13 @@ BaseObject* ObjectFactory::factory(const int num)
             return nullptr;
         }
     }//після створення перевіряти че не нул якщо нул то робити Unknown
-    catch (std::bad_alloc& exception)
+    catch (std::bad_alloc)
     {
-        std::cerr << "function 'ObjectFactory::factory' memory was not allocated" << '\n';
+        std::ofstream logFile(exeption_Log_Filename, std::ios::app);
+        if (logFile.is_open()) {
+            logFile << "function 'ObjectFactory::factory' memory was not allocated" << std::endl;
+            logFile.close();
+        }
         return nullptr;
     }   
 }

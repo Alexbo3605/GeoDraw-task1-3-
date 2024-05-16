@@ -15,6 +15,7 @@ public:
 
 	bool push_back_Data(const double d);
 
+	//може видавати помилку читання THROW_ERR
 	double get_Data(const int num) const;
 
 	virtual void showAll() override {
