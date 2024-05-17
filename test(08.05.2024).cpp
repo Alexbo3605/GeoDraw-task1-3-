@@ -16,7 +16,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 
 	ArrayDataReader* dr = new ArrayDataReader();
-	
+
 	std::vector<BaseObject*> objects;
 
 

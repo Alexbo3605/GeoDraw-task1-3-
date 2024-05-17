@@ -27,17 +27,23 @@ void ArrayDataReader::read(std::vector<BaseObject*>& objects_Out)
 
 	objects_Out.reserve(objectCount);
 
-
+	BaseObject* obj = nullptr;
 	//створюєм обєкти
 	for (int i = 0; i < objectCount; i++)
 	{
-		BaseObject* obj = read_Object();
-
-		/*obj->showAll();*/
+		try 
+		{
+			obj = read_Object();
+		}
+		catch (EndOfFile) 
+		{
+			break;
+		}
 
 		if (obj != nullptr) {
 			objects_Out.push_back(obj);
 		}
+		
 	}
 }
 
@@ -67,12 +73,25 @@ BaseObject* ArrayDataReader::read_Object()
 
 	}
 	catch (EndOfFile) {
-		
+
+		std::ofstream logFile(exeption_Log_Filename, std::ios::app); 
+		if (logFile.is_open()) { 
+			logFile << "End of file" << std::endl; 
+			logFile.close(); 
+		}
+		obj->~BaseObject(); 
+		obj = nullptr;
+
+		throw; // generate the same exception
+	}
+	catch (std::bad_alloc)
+	{
 		std::ofstream logFile(exeption_Log_Filename, std::ios::app);
 		if (logFile.is_open()) {
-			logFile <<"End of file"  << std::endl;
+			logFile << "function 'ObjectFactory::factory' memory was not allocated" << std::endl;
 			logFile.close();
 		}
+		return nullptr;
 	}
 
 	return obj;
