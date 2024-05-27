@@ -2,33 +2,44 @@
 //
 
 
-#include "ObjectFactory.h"
+#include "ArrayDataProvider.h"
+#include "FileDataProvider.h"
 
-//#include "IDataReader.h"
-
-#include "ArrayDataReader.h"
 #include <tchar.h>
 
 
 int _tmain(int argc, _TCHAR* argv[])
 {
 
-
-
-	ArrayDataReader* dr = new ArrayDataReader();
+	ArrayDataProvider* arr = new ArrayDataProvider();
 
 	std::vector<BaseObject*> objects;
-
-
-	dr->read(objects); 
-
-	std::cout <<"size!!!!!!!  " << objects.size() << std::endl;
+	std::cout << "--------------------read Arr--------------------" << std::endl;
+	arr->readIn(objects);
 	for (auto& i : objects)
 	{
 		i->showAll();
 	}
 
-	delete dr;
+
+	FileDataProvider* fileArr = new FileDataProvider(DATA_FILENAME);
+	std::cout << "--------------------write File--------------------" << std::endl;
+	if (fileArr->writeFrom(objects))
+	{
+		std::vector<BaseObject*> readObjects;
+		std::cout << "--------------------read File--------------------" << std::endl;
+		fileArr->readIn(readObjects);
+
+		for (auto& i : readObjects)
+		{
+			i->showAll();
+		}
+
+	}
+
+	delete arr;
+	delete fileArr;
+
 	return 0;
 }
 

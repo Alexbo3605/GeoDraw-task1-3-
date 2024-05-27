@@ -127,14 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArrayDataReader.cpp" />
+    <ClCompile Include="ArrayDataProvider.cpp" />
     <ClCompile Include="BaseObject.cpp" />
     <ClCompile Include="BoundingBox.cpp" />
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CircularArc.cpp" />
-    <ClCompile Include="DataProvider.cpp" />
     <ClCompile Include="Exceptions.cpp" />
-    <ClCompile Include="IDataReader.cpp" />
+    <ClCompile Include="FileDataProvider.cpp" />
+    <ClCompile Include="IDataProvider.cpp" />
     <ClCompile Include="ObjectFactory.cpp" />
     <ClCompile Include="Point2d.cpp" />
     <ClCompile Include="Polygon.cpp" />
@@ -146,14 +146,14 @@
     <ClCompile Include="WDraw.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArrayDataReader.h" />
+    <ClInclude Include="ArrayDataProvider.h" />
     <ClInclude Include="BaseObject.h" />
     <ClInclude Include="BoundingBox.h" />
     <ClInclude Include="Circle.h" />
     <ClInclude Include="CircularArc.h" />
-    <ClInclude Include="DataProvider.h" />
     <ClInclude Include="Exceptions.h" />
-    <ClInclude Include="IDataReader.h" />
+    <ClInclude Include="FileDataProvider.h" />
+    <ClInclude Include="IDataProvider.h" />
     <ClInclude Include="ObjectFactory.h" />
     <ClInclude Include="Point2d.h" />
     <ClInclude Include="Polygon.h" />

@@ -4,7 +4,7 @@ BaseObject* ObjectFactory::factory(const int num)
 {
     try
     {
-        switch (num) 
+        switch (num)
         {
         case 1:
             return new Rectangle();
@@ -17,17 +17,16 @@ BaseObject* ObjectFactory::factory(const int num)
         case 6:
             return new Polyline();
         default:
-            /*return new Unknown();*/
-            return nullptr;
+            return new Unknown(num);
         }
-    }//після створення перевіряти че не нул якщо нул то робити Unknown
+    }
     catch (std::bad_alloc)
     {
-        std::ofstream logFile(exeption_Log_Filename, std::ios::app);
+        std::ofstream logFile(EXEPTION_LOG_FILENAME, std::ios::app);
         if (logFile.is_open()) {
             logFile << "function 'ObjectFactory::factory' memory was not allocated" << std::endl;
             logFile.close();
         }
         return nullptr;
-    }   
+    }
 }

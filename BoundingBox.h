@@ -1,9 +1,7 @@
 #pragma once
-
 #include "Point2d.h"
+
 #include <vector>
-
-
 class BoundingBox {
 
 public:
@@ -16,8 +14,6 @@ public:
 	std::vector<Point2d*> get_Four_Points() const;
 
 private:
-
 	Point2d* m_Top_Left_Point;
 	Point2d* m_Bottom_Right_Point;
-
 };

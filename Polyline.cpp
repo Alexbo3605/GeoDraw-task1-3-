@@ -1,11 +1,10 @@
 #include "Polyline.h"
 
-Polyline::Polyline(void) 
+Polyline::Polyline(void)
 	: BaseObject(CREATE_POLYLINE), m_size(0), m_points()
 {}
 
-// const std::vector<Point2d*>& points думаю оце фігня бо наша передавати цілий масив якщо можна створити його і пододавати елементи
-Polyline::Polyline(const int size, const std::vector<Point2d*>& points) 
+Polyline::Polyline(const int size, const std::vector<Point2d*>& points)
 	: BaseObject(CREATE_POLYLINE), m_size(size), m_points(points)
 {}
 
@@ -17,12 +16,10 @@ Polyline::~Polyline(void)
 	m_points.clear();
 }
 
-
 bool Polyline::push_back_Point(Point2d& point)
 {
 	m_points.push_back(&point);
 	m_size++;
-
 	return true;
 }
 
@@ -40,13 +37,26 @@ int Polyline::get_Size() const
 	return m_size;
 }
 
-void Polyline::deserialize(DataProvider& dp, int size) //так собі хочу змінити
+void Polyline::serialize(IDataProvider::IDataReader* dr) const
+{
+	//write object size
+	dr->wrInt(m_size * 2);
+
+	//write m_size points
+	for (size_t i = 0; i < m_size; i++)
+	{
+		dr->wrDouble(m_points[i]->x());
+		dr->wrDouble(m_points[i]->y());
+	}
+}
+
+void Polyline::deserialize(IDataProvider::IDataReader* dr, int size)
 {
 	int pointCount = size / 2;
 
-	for (int i = 0; i < pointCount; i++)
+	for (size_t i = 0; i < pointCount; i++)
 	{
-		Point2d* point = new Point2d{ dp.rdDouble(--size), dp.rdDouble(--size) };
+		Point2d* point = new Point2d{ dr->rdDouble(--size), dr->rdDouble(--size) };
 		this->push_back_Point(*point);
 
 	}
@@ -55,14 +65,13 @@ void Polyline::deserialize(DataProvider& dp, int size) //так собі хочу змінити
 BoundingBox Polyline::AABB() const
 {
 	if (m_size == 0) {
-		return BoundingBox( Point2d(0, 0),  Point2d(0, 0));
+		return BoundingBox(Point2d(0, 0), Point2d(0, 0));
 	}
 
 	double min_x = std::numeric_limits<double>::max();
 	double max_x = std::numeric_limits<double>::lowest();
 	double min_y = std::numeric_limits<double>::max();
 	double max_y = std::numeric_limits<double>::lowest();
-
 
 	for (const auto& point : m_points) {
 		min_x = std::min(min_x, point->x());

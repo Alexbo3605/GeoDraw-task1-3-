@@ -1,11 +1,11 @@
 #include "Circle.h"
 
 
-Circle::Circle(void) 
+Circle::Circle(void)
 	: BaseObject(CREATE_CIRCLE), m_center(new Point2d({ 0,0 })), m_radius(0.0)
 {}
 
-Circle::Circle(const Point2d& center, const double radius) 
+Circle::Circle(const Point2d& center, const double radius)
 	: BaseObject(CREATE_CIRCLE), m_center(new Point2d(center)), m_radius(radius)
 {}
 
@@ -34,13 +34,22 @@ double Circle::get_Circle_Radius() const
 	return m_radius;
 }
 
-void Circle::deserialize(DataProvider& dp, int size)
+void Circle::serialize(IDataProvider::IDataReader* dr) const
 {
-	Point2d point(dp.rdDouble(--size), dp.rdDouble(--size));
+	//write object size
+	dr->wrInt(CIRCLE_SIZE);
+	//write center
+	dr->wrDouble(m_center->x()); dr->wrDouble(m_center->y());
+	//write radius
+	dr->wrDouble(m_radius);
+}
+
+void Circle::deserialize(IDataProvider::IDataReader* dr, int size)
+{
+	Point2d point(dr->rdDouble(--size), dr->rdDouble(--size));
 	this->set_Circle_Center(point);
 
-	this->set_Circle_Radius(dp.rdDouble(--size));
-
+	this->set_Circle_Radius(dr->rdDouble(--size));
 }
 
 BoundingBox Circle::AABB() const

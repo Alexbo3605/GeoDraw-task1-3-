@@ -1,6 +1,5 @@
 #include "BoundingBox.h"
 
-
 BoundingBox::BoundingBox(const Point2d& top_Left_Point, const Point2d& bottom_Right_Point) :
 	m_Top_Left_Point(new Point2d(top_Left_Point)), m_Bottom_Right_Point(new Point2d(bottom_Right_Point))
 {}
@@ -33,7 +32,7 @@ std::vector<Point2d*> BoundingBox::get_Four_Points() const
 
 		m_Top_Left_Point -----> P2
 
-		m_Bottom_Right_Point -> P4 
+		m_Bottom_Right_Point -> P4
 	*/
 
 	std::vector<Point2d*> AABB;
@@ -48,5 +47,4 @@ std::vector<Point2d*> BoundingBox::get_Four_Points() const
 	AABB.push_back(m_Bottom_Right_Point);
 
 	return AABB;
-
 }

@@ -2,17 +2,12 @@
 
 #include "BaseObject.h"
 
-#include "Unknown.h" //тут не викор мб якось структурувати інклюди
+#include "Unknown.h"
 #include "Rectangle.h"
 #include "Polyline.h"
 #include "Polygon.h"
 #include "CircularArc.h"
 #include "Circle.h"
-
-#include <fstream>
-
-
-
 
 class  ObjectFactory {
 public:

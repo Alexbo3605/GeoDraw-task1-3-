@@ -1,30 +1,23 @@
 #pragma once
-
-#include <iostream>
-
 #include "Point2d.h"
-#include "DataProvider.h"
 #include "BoundingBox.h"
 #include "Settings.h"
-//#include "ObjectFactory.h"
+#include "IDataProvider.h"
+
+#include <iostream>
 
 class BaseObject {
 public:
     BaseObject(void);
     BaseObject(int id);
-
     virtual ~BaseObject(void);
 
     int get_Id() const;
-
-    virtual void showAll() = 0; //чиста віртуальна функція
-
+    virtual void showAll() = 0;
     virtual BoundingBox AABB() const = 0;
-    
-    //virtual void serialize(std::ostream& out) const = 0;
-    // 
-    virtual void deserialize(DataProvider& dp, int size) = 0; //чиста віртуальна функція
 
+    virtual void serialize(IDataProvider::IDataReader* dr) const = 0;
+    virtual void deserialize(IDataProvider::IDataReader* dr, int size) = 0;
 
 protected:
     int p_id_Obj;

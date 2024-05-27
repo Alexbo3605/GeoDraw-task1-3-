@@ -1,9 +1,10 @@
 #pragma once
 #define PI 3.1415
 #define THROW_ERR 23000000
-static const char* exeption_Log_Filename = "exeption_Log.txt";
+#define COUNT_OBJECTS_POS 0
+static const char* EXEPTION_LOG_FILENAME = "exeption_Log.txt";
+static const char* DATA_FILENAME = "data.bin";
 
-//#define PI 3.1415
 enum ObjectType {
     CREATE_RECTANGLE = 1,
     CREATE_CIRCLE = 2,
@@ -12,8 +13,14 @@ enum ObjectType {
     CREATE_POLYLINE = 6
 };
 
+enum ObjectSize {
+    RECTANGLE_SIZE = 4,
+    CIRCLE_SIZE = 3,
+    CIRCULAR_ARC_SIZE = 5,
+};
 
 class Settings
 {
 };
+
 

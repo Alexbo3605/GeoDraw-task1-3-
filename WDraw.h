@@ -3,9 +3,7 @@
 
 class WDraw
 {
-
 public:
-
     WDraw(void);
     virtual ~WDraw(void);
 
@@ -18,5 +16,4 @@ public:
     /*                                                                      */
     /************************************************************************/
     virtual void drawText(const char* text);
-
 };
