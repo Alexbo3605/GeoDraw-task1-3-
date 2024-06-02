@@ -1,6 +1,10 @@
 #pragma once
 
 #include "BaseObject.h"
+//#include "IDataProvider.h"
+//#include "ArrayDataProvider.h"
+//#include "FileDataProvider.h"
+
 class CircularArc : public BaseObject {
 public:
 	CircularArc(void);

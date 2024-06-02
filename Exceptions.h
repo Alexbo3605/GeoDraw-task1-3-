@@ -10,20 +10,17 @@ public:
     ~EndOfFile(void);
 };
 
-class ReadError {
+class IOError {
 public:
-    ReadError(std::string error, int pos);
+    IOError(const std::string& error, int pos);
+    ~IOError(void);
     std::string getError();
+
 private:
+    std::string getCurrentTime();
+
     std::string m_error;
     int m_pos;
 };
 
-class WriteError {
-public:
-    WriteError(int pos);
-    std::string getError();
-private:
-    int m_pos;
-};
 

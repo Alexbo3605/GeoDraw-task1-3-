@@ -1,6 +1,9 @@
 #pragma once
-
 #include "BaseObject.h"
+//#include "ArrayDataProvider.h"
+//#include "FileDataProvider.h"
+//#include "BaseObject.h"
+//#include "IDataProvider.h"
 class Rectangle : public BaseObject {
 public:
 	Rectangle(void);

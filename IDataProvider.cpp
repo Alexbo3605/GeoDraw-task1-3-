@@ -12,3 +12,4 @@ IDataProvider::IDataProvider(void)
 
 IDataProvider::~IDataProvider(void)
 {}
+

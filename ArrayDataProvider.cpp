@@ -96,13 +96,18 @@ void ArrayDataProvider::ArrayDataReader::checkCurr()
     }
 }
 
+bool ArrayDataProvider::ArrayDataReader::isEnd()
+{
+    return p_current >= p_maxCurrent;
+}
+
 int ArrayDataProvider::ArrayDataReader::rdInt(const int remainder)
 {
     checkCurr();
     const int i = p_arrData[p_current++];
     if (i == THROW_ERR) {
         p_current += remainder;
-        throw ReadError("Error reding Int pos", p_current - remainder);
+        throw IOError("Error reding Int pos", __LINE__);
     }
     return i;
 }
@@ -113,7 +118,7 @@ double ArrayDataProvider::ArrayDataReader::rdDouble(const int remainder)
     const double d = p_arrData[p_current++];
     if (d == THROW_ERR) {
         p_current += remainder;
-        throw ReadError("Error reding Double pos", p_current - remainder);
+        throw IOError("Error reding Double pos", __LINE__);
     }
     return d;
 }
@@ -180,78 +185,24 @@ bool ArrayDataProvider::writeFrom(const std::vector<BaseObject*>& inputObjects)
 }
 
 
-
 ///-----------Read
 BaseObject* ArrayDataProvider::read_Object()
 {
-    const int objectType = arrDataReader->rdInt();
-    const int objectSize = arrDataReader->rdInt();
-    BaseObject* obj = ObjectFactory::factory(objectType);
-
-    try {
-        obj->deserialize(arrDataReader, objectSize);
-    }
-    catch (ReadError& ex) {
-
-        delete obj;
-        obj = nullptr;
-
-        std::ofstream logFile(EXEPTION_LOG_FILENAME, std::ios::app);
-        if (logFile.is_open()) {
-            logFile << ex.getError() << std::endl;
-            logFile.close();
-        }
-    }
-    catch (EndOfFile) {
-
-        std::ofstream logFile(EXEPTION_LOG_FILENAME, std::ios::app);
-        if (logFile.is_open()) {
-            logFile << "End of file" << std::endl;
-            logFile.close();
-        }
-        delete obj;
-        obj = nullptr;
-
-        throw; // generate the same exception
-    }
-    catch (std::bad_alloc)
-    {
-        std::ofstream logFile(EXEPTION_LOG_FILENAME, std::ios::app);
-        if (logFile.is_open()) {
-            logFile << "function 'ObjectFactory::factory' memory was not allocated" << std::endl;
-            logFile.close();
-        }
-        return nullptr;
-    }
-    return obj;
+    return read_Object_temp(arrDataReader);
 }
-
 
 void ArrayDataProvider::readIn(std::vector<BaseObject*>& outputObjects)
 {
-    arrDataReader->setCurrent(COUNT_OBJECTS_POS);
-    const int objectCount = arrDataReader->rdInt();
-
-    outputObjects.reserve(objectCount + outputObjects.size());
-
-    BaseObject* obj = nullptr;
-
-    for (int i = 0; i < objectCount; i++)
-    {
-        try
-        {
-            obj = read_Object();
-
-            if (obj != nullptr) {
-                outputObjects.push_back(obj);
-            }
-        }
-        catch (EndOfFile)
-        {
-            break;
-        }
-    }
+    readIn_temp(arrDataReader, outputObjects);
 }
+
+inline BaseObject* ArrayDataProvider::createObject(const int objectId)
+{
+    return ObjectFactory::factory(objectId);
+}
+
+
+
 
 
 

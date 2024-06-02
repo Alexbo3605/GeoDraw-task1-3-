@@ -1,6 +1,10 @@
 #pragma once
 
 #include "BaseObject.h"
+//#include "IDataProvider.h"
+//#include "ArrayDataProvider.h"
+//#include "FileDataProvider.h"
+
 class Circle : public BaseObject {
 public:
 	Circle(void);

@@ -1,4 +1,5 @@
 #include "Rectangle.h"
+//#include "IDataProvider.h"
 
 Rectangle::Rectangle(void) :
 	BaseObject(CREATE_RECTANGLE), m_Top_Left_Point(new Point2d({ 0,0 })), m_Bottom_Right_Point(new Point2d({ 0,0 }))
@@ -36,6 +37,8 @@ Point2d* Rectangle::get_Rectangle_Bottom_Right_Point() const
 
 void Rectangle::serialize(IDataProvider::IDataReader* dr) const
 {
+	static constexpr int RECTANGLE_SIZE = 4;
+
 	//write object size
 	dr->wrInt(RECTANGLE_SIZE);
 	//write Top_Left_Point

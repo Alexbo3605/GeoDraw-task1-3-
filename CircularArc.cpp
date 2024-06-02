@@ -1,5 +1,5 @@
 #include "CircularArc.h"
-
+//#include "IDataProvider.h"
 
 CircularArc::CircularArc(void) :
     BaseObject(CREATE_CIRCULAR_ARC), m_center(new Point2d({ 0,0 })), m_radius(0), m_start_Angle(0), m_end_Angle(0)
@@ -57,6 +57,7 @@ double CircularArc::get_CircularArc_End_Angle() const
 
 void CircularArc::serialize(IDataProvider::IDataReader* dr) const
 {
+    static constexpr int CIRCULAR_ARC_SIZE = 5;
     //write object size
     dr->wrInt(CIRCULAR_ARC_SIZE);
     //write center

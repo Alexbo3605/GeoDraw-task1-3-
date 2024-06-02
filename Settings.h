@@ -13,12 +13,6 @@ enum ObjectType {
     CREATE_POLYLINE = 6
 };
 
-enum ObjectSize {
-    RECTANGLE_SIZE = 4,
-    CIRCLE_SIZE = 3,
-    CIRCULAR_ARC_SIZE = 5,
-};
-
 class Settings
 {
 };

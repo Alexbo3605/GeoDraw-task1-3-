@@ -13,64 +13,61 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Файлы заголовков\Elements%28H%29">
-      <UniqueIdentifier>{450a9f08-b829-49f4-b2c1-79579b6151ea}</UniqueIdentifier>
+    <Filter Include="Исходные файлы\Objects%28CPP%29">
+      <UniqueIdentifier>{95af8694-0db0-4b32-8d58-c571327e394b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\Elements%28CPP%29">
-      <UniqueIdentifier>{fdcf1a14-a762-4776-9ad0-feaf25ae1fed}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Drawing%28H%29">
-      <UniqueIdentifier>{c9856044-f3db-4951-8770-c0223045eb6b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\Drawing%28CPP%29">
-      <UniqueIdentifier>{f26a5606-4e46-412f-97db-c2b4adfdbd36}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Provider%28H%29">
-      <UniqueIdentifier>{deb778a2-c728-403a-b618-fb413dc10a1e}</UniqueIdentifier>
+    <Filter Include="Файлы заголовков\Objects%28H%29">
+      <UniqueIdentifier>{a3605891-c067-4fd1-bc80-88fe64361644}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\Provider%28CPP%29">
-      <UniqueIdentifier>{e7756d04-c5a2-4777-82fa-e2a39f1958b3}</UniqueIdentifier>
+      <UniqueIdentifier>{80e9343c-d42d-45f4-bca5-c17cd0adc9ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Provider%28H%29">
+      <UniqueIdentifier>{a729fe76-5222-4069-80b6-bba7ecf179b3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="test(08.05.2024).cpp">
+    <ClCompile Include="Task2.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectFactory.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Settings.cpp">
+    <ClCompile Include="BoundingBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Exceptions.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="BaseObject.cpp">
-      <Filter>Исходные файлы\Elements%28CPP%29</Filter>
+    <ClCompile Include="ObjectFactory.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Circle.cpp">
-      <Filter>Исходные файлы\Elements%28CPP%29</Filter>
+    <ClCompile Include="Point2d.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CircularArc.cpp">
-      <Filter>Исходные файлы\Elements%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Polygon.cpp">
-      <Filter>Исходные файлы\Elements%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Polyline.cpp">
-      <Filter>Исходные файлы\Elements%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Rectangle.cpp">
-      <Filter>Исходные файлы\Elements%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Unknown.cpp">
-      <Filter>Исходные файлы\Elements%28CPP%29</Filter>
+    <ClCompile Include="Settings.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="WDraw.cpp">
-      <Filter>Исходные файлы\Drawing%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="BoundingBox.cpp">
       <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseObject.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="CircularArc.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygon.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Polyline.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Unknown.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
     </ClCompile>
     <ClCompile Include="ArrayDataProvider.cpp">
       <Filter>Исходные файлы\Provider%28CPP%29</Filter>
@@ -81,49 +78,46 @@
     <ClCompile Include="IDataProvider.cpp">
       <Filter>Исходные файлы\Provider%28CPP%29</Filter>
     </ClCompile>
-    <ClCompile Include="Point2d.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ObjectFactory.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Settings.h">
+    <ClInclude Include="BoundingBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Exceptions.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="BaseObject.h">
-      <Filter>Файлы заголовков\Elements%28H%29</Filter>
+    <ClInclude Include="ObjectFactory.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Circle.h">
-      <Filter>Файлы заголовков\Elements%28H%29</Filter>
+    <ClInclude Include="Point2d.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CircularArc.h">
-      <Filter>Файлы заголовков\Elements%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Polygon.h">
-      <Filter>Файлы заголовков\Elements%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Polyline.h">
-      <Filter>Файлы заголовков\Elements%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Файлы заголовков\Elements%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Unknown.h">
-      <Filter>Файлы заголовков\Elements%28H%29</Filter>
+    <ClInclude Include="Settings.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="WDraw.h">
-      <Filter>Файлы заголовков\Drawing%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="BoundingBox.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseObject.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="CircularArc.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygon.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Polyline.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Unknown.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
     </ClInclude>
     <ClInclude Include="ArrayDataProvider.h">
       <Filter>Файлы заголовков\Provider%28H%29</Filter>
@@ -134,13 +128,5 @@
     <ClInclude Include="IDataProvider.h">
       <Filter>Файлы заголовков\Provider%28H%29</Filter>
     </ClInclude>
-    <ClInclude Include="Point2d.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="test(08.05.2024).rc">
-      <Filter>Файлы ресурсов</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>

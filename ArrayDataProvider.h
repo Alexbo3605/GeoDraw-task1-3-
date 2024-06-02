@@ -1,11 +1,12 @@
 #pragma once
-#include "IDataProvider.h"
+//#include "IDataProvider.h"
 #include "ObjectFactory.h"
+//#include "BaseObject.h"
 
 class ArrayDataProvider : public IDataProvider
 {
 public:
-    class ArrayDataReader : public IDataReader
+    class ArrayDataReader : public IDataReader 
     {
     public:
         ArrayDataReader(void);
@@ -20,10 +21,10 @@ public:
 
         void changeObjectsCount(const int delta);
         virtual void setCurrent(const int newCurrent) override;
-
+        virtual bool isEnd() override;
     private:
         virtual void checkCurr() override;
-
+        
         std::vector<double> p_arrData;
     };
 
@@ -37,6 +38,7 @@ public:
 private:
     void write_Object(BaseObject*);
     BaseObject* read_Object();
+    inline virtual BaseObject* createObject(const int objectId) override;
 
     ArrayDataReader* arrDataReader;
 };

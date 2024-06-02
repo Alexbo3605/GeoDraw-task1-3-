@@ -1,11 +1,16 @@
 #pragma once
-#include "Point2d.h"
-#include "BoundingBox.h"
-#include "Settings.h"
-#include "IDataProvider.h"
 
+
+//#include "Settings.h"
+#include "IDataProvider.h"//закоментувати
+#include "BoundingBox.h"
 #include <iostream>
 
+//class IDataProvider {
+//public:
+//    class IDataReader;
+//};
+ 
 class BaseObject {
 public:
     BaseObject(void);

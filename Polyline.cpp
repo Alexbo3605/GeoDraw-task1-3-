@@ -1,4 +1,5 @@
 #include "Polyline.h"
+//#include "IDataProvider.h"
 
 Polyline::Polyline(void)
 	: BaseObject(CREATE_POLYLINE), m_size(0), m_points()

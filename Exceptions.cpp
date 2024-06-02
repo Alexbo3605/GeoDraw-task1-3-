@@ -6,32 +6,26 @@ EndOfFile::EndOfFile(void)
 EndOfFile::~EndOfFile(void)
 {}
 
-ReadError::ReadError(std::string error, const int pos) :
+IOError::IOError(const std::string& error, int pos) :
     m_error(error), m_pos(pos)
 {}
 
-std::string ReadError::getError()
-{
-    auto currentTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-    char timeBuffer[26];
-
-    if (ctime_s(timeBuffer, sizeof(timeBuffer), &currentTime) != 0) {
-        strcpy_s(timeBuffer, sizeof(timeBuffer), "Error getting time ");
-    }
-
-    std::string timeStr = timeBuffer;
-    timeStr.pop_back();
-    std::string error = timeStr + "-- " + m_error + " " + std::to_string(m_pos);
-    return error;
-}
-
-WriteError::WriteError(int pos) : m_pos(pos)
+IOError::~IOError(void)
 {}
 
-std::string WriteError::getError()
-{
+std::string IOError::getError() {
+    std::string currentTime = getCurrentTime();
+    std::string error = currentTime + "-- " + m_error + " Line --> " + std::to_string(m_pos);
+    return error;
+}
+
+std::string IOError::getCurrentTime() {
+
+    static constexpr size_t TIME_BUFFER_SIZE = 26;
+   
+
     auto currentTime = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
-    char timeBuffer[26];
+    char timeBuffer[TIME_BUFFER_SIZE];
 
     if (ctime_s(timeBuffer, sizeof(timeBuffer), &currentTime) != 0) {
         strcpy_s(timeBuffer, sizeof(timeBuffer), "Error getting time ");
@@ -39,8 +33,5 @@ std::string WriteError::getError()
 
     std::string timeStr = timeBuffer;
     timeStr.pop_back();
-
-    std::string error = timeStr + "-- " + "Eror write   object -->" + std::to_string(m_pos);
-    return error;
+    return timeStr;
 }
-

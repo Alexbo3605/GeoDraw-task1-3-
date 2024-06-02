@@ -1,5 +1,10 @@
 #pragma once
+//#include "BaseObject.h"
+//#include "IDataProvider.h"
+//#include "ArrayDataProvider.h"
+//#include "FileDataProvider.h"
 #include "BaseObject.h"
+
 
 #include <vector>
 class Polygon : public BaseObject {

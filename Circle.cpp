@@ -1,5 +1,5 @@
 #include "Circle.h"
-
+//#include "IDataProvider.h"
 
 Circle::Circle(void)
 	: BaseObject(CREATE_CIRCLE), m_center(new Point2d({ 0,0 })), m_radius(0.0)
@@ -36,6 +36,7 @@ double Circle::get_Circle_Radius() const
 
 void Circle::serialize(IDataProvider::IDataReader* dr) const
 {
+	static constexpr int CIRCLE_SIZE = 3;
 	//write object size
 	dr->wrInt(CIRCLE_SIZE);
 	//write center

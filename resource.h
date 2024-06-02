@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by test(08.05.2024).rc
+// Used by Task2.rc
 
 // Следующие стандартные значения для новых объектов
 // 

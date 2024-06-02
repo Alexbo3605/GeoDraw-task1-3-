@@ -1,5 +1,5 @@
 #include "Polygon.h"
-
+//#include "IDataProvider.h"
 
 Polygon::Polygon(void)
 	: BaseObject(CREATE_POLYGON), m_size(0), m_points()

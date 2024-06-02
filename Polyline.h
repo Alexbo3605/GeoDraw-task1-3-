@@ -1,5 +1,8 @@
 #pragma once
 #include "BaseObject.h"
+//#include "IDataProvider.h"
+//#include "ArrayDataProvider.h"
+//#include "FileDataProvider.h"
 
 #include <vector>
 class Polyline : public BaseObject {

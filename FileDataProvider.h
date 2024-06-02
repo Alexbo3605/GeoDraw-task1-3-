@@ -1,4 +1,5 @@
 #pragma once
+
 #include "ObjectFactory.h"
 
 #include <fstream>
@@ -18,11 +19,13 @@ public:
         virtual void wrDouble(const double number) override;
 
         virtual void setCurrent(const int newCurrent) override;
-        bool fileEmpty();
+        
+        virtual bool isEnd() override;
+        int getCurrent();
 
     private:
         virtual void checkCurr() override;
-
+        
         std::fstream p_file;
         std::string p_DataFileName;
     };
@@ -32,9 +35,14 @@ public:
     virtual void readIn(std::vector<BaseObject*>& outputObjects) override;
     virtual bool writeFrom(const std::vector<BaseObject*>& inputObjects) override;
 
+    void erroReadIn(std::vector<BaseObject*>& outputObjects);
+
 private:
     FileDataReader* fileDataReader;
 
     void write_Object(BaseObject* obj);
     BaseObject* read_Object();
+    inline virtual BaseObject* createObject(const int objectId) override;
+
+    BaseObject* errorRead_Object();
 };
