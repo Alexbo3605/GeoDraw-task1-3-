@@ -21,6 +21,16 @@ double Unknown::get_Data(const int num) const
 	return THROW_ERR;
 }
 
+void Unknown::draw()
+{
+	std::cout << "Unknown object with ID: " << BaseObject::p_id_Obj << std::endl;
+	std::cout << "Data:" << std::endl;
+	for (size_t i = 0; i < m_size; ++i) {
+		std::cout << "  " << m_data[i];
+	}
+	std::cout << std::endl;
+}
+
 void Unknown::serialize(IDataProvider::IDataReader* dr) const
 {
 	//write object size

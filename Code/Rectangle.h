@@ -13,11 +13,7 @@ public:
 	Point2d* get_Rectangle_Top_Left_Point() const;
 	Point2d* get_Rectangle_Bottom_Right_Point() const;
 
-	virtual void showAll() override {
-		std::cout << "Rectangle:" << std::endl;
-		std::cout << "Top left corner: (" << m_Top_Left_Point->x() << ", " << m_Top_Left_Point->y() << ")" << std::endl;
-		std::cout << "Bottom right corner: (" << m_Bottom_Right_Point->x() << ", " << m_Bottom_Right_Point->y() << ")" << std::endl;
-	}
+	virtual void draw() override;
 
 	virtual void serialize(IDataProvider::IDataReader* dr) const override;
 	virtual void deserialize(IDataProvider::IDataReader* dr, int size) override;

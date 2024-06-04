@@ -70,6 +70,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Binaries\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Binaries\Temp\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Binaries\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)Binaries\Temp\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -104,10 +112,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\SFML-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Libraries\SFML-2.6.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;sfml-network-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -118,50 +129,70 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Libraries\SFML-2.6.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Libraries\SFML-2.6.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-audio.lib;sfml-system.lib;sfml-network.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArrayDataProvider.cpp" />
-    <ClCompile Include="BaseObject.cpp" />
-    <ClCompile Include="BoundingBox.cpp" />
-    <ClCompile Include="Circle.cpp" />
-    <ClCompile Include="CircularArc.cpp" />
-    <ClCompile Include="Exceptions.cpp" />
-    <ClCompile Include="FileDataProvider.cpp" />
-    <ClCompile Include="IDataProvider.cpp" />
-    <ClCompile Include="ObjectFactory.cpp" />
-    <ClCompile Include="Point2d.cpp" />
-    <ClCompile Include="Polygon.cpp" />
-    <ClCompile Include="Polyline.cpp" />
-    <ClCompile Include="Rectangle.cpp" />
-    <ClCompile Include="Settings.cpp" />
-    <ClCompile Include="Task2.cpp" />
-    <ClCompile Include="Unknown.cpp" />
-    <ClCompile Include="WDraw.cpp" />
+    <ClCompile Include="Code\ArrayDataProvider.cpp" />
+    <ClCompile Include="Code\BaseObject.cpp" />
+    <ClCompile Include="Code\BoundingBox.cpp" />
+    <ClCompile Include="Code\Circle.cpp" />
+    <ClCompile Include="Code\CircularArc.cpp" />
+    <ClCompile Include="Code\Exceptions.cpp" />
+    <ClCompile Include="Code\FileDataProvider.cpp" />
+    <ClCompile Include="Code\IDataProvider.cpp" />
+    <ClCompile Include="Code\ObjectFactory.cpp" />
+    <ClCompile Include="Code\Point2d.cpp" />
+    <ClCompile Include="Code\Polygon.cpp" />
+    <ClCompile Include="Code\Polyline.cpp" />
+    <ClCompile Include="Code\Rectangle.cpp" />
+    <ClCompile Include="Code\Settings.cpp" />
+    <ClCompile Include="Code\SFMLCircleDecorator.cpp" />
+    <ClCompile Include="Code\SFMLCircularArcDecorator.cpp" />
+    <ClCompile Include="Code\SFMLPolygonDecorator.cpp" />
+    <ClCompile Include="Code\SFMLPolylineDecorator.cpp" />
+    <ClCompile Include="Code\SFMLRectangleDecorator.cpp" />
+    <ClCompile Include="Code\SFMLWindowFacade.cpp" />
+    <ClCompile Include="Code\Task2.cpp" />
+    <ClCompile Include="Code\Unknown.cpp" />
+    <ClCompile Include="Code\WDraw.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArrayDataProvider.h" />
-    <ClInclude Include="BaseObject.h" />
-    <ClInclude Include="BoundingBox.h" />
-    <ClInclude Include="Circle.h" />
-    <ClInclude Include="CircularArc.h" />
-    <ClInclude Include="Exceptions.h" />
-    <ClInclude Include="FileDataProvider.h" />
-    <ClInclude Include="IDataProvider.h" />
-    <ClInclude Include="ObjectFactory.h" />
-    <ClInclude Include="Point2d.h" />
-    <ClInclude Include="Polygon.h" />
-    <ClInclude Include="Polyline.h" />
-    <ClInclude Include="Rectangle.h" />
-    <ClInclude Include="Settings.h" />
-    <ClInclude Include="Unknown.h" />
-    <ClInclude Include="WDraw.h" />
+    <ClInclude Include="Code\ArrayDataProvider.h" />
+    <ClInclude Include="Code\BaseObject.h" />
+    <ClInclude Include="Code\BoundingBox.h" />
+    <ClInclude Include="Code\Circle.h" />
+    <ClInclude Include="Code\CircularArc.h" />
+    <ClInclude Include="Code\Constants.h" />
+    <ClInclude Include="Code\Exceptions.h" />
+    <ClInclude Include="Code\FileDataProvider.h" />
+    <ClInclude Include="Code\IDataProvider.h" />
+    <ClInclude Include="Code\ObjectFactory.h" />
+    <ClInclude Include="Code\Point2d.h" />
+    <ClInclude Include="Code\Polygon.h" />
+    <ClInclude Include="Code\Polyline.h" />
+    <ClInclude Include="Code\Rectangle.h" />
+    <ClInclude Include="Code\resource.h" />
+    <ClInclude Include="Code\Settings.h" />
+    <ClInclude Include="Code\SFMLCircleDecorator.h" />
+    <ClInclude Include="Code\SFMLCircularArcDecorator.h" />
+    <ClInclude Include="Code\SFMLPolygonDecorator.h" />
+    <ClInclude Include="Code\SFMLPolylineDecorator.h" />
+    <ClInclude Include="Code\SFMLRectangleDecorator.h" />
+    <ClInclude Include="Code\SFMLWindowFacade.h" />
+    <ClInclude Include="Code\Unknown.h" />
+    <ClInclude Include="Code\WDraw.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Task2.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

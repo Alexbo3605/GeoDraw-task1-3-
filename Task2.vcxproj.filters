@@ -13,120 +13,185 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Исходные файлы\Objects%28CPP%29">
-      <UniqueIdentifier>{95af8694-0db0-4b32-8d58-c571327e394b}</UniqueIdentifier>
+    <Filter Include="Файлы заголовков\Provider%28H%29">
+      <UniqueIdentifier>{df942652-397a-4f14-9c6f-8332d4c49430}</UniqueIdentifier>
     </Filter>
     <Filter Include="Файлы заголовков\Objects%28H%29">
-      <UniqueIdentifier>{a3605891-c067-4fd1-bc80-88fe64361644}</UniqueIdentifier>
+      <UniqueIdentifier>{cf59da91-4492-43c5-b664-e2bb73428ce3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Window%28H%29">
+      <UniqueIdentifier>{e605b9cb-9432-4610-8d11-73064fdc5802}</UniqueIdentifier>
     </Filter>
     <Filter Include="Исходные файлы\Provider%28CPP%29">
-      <UniqueIdentifier>{80e9343c-d42d-45f4-bca5-c17cd0adc9ac}</UniqueIdentifier>
+      <UniqueIdentifier>{1be52289-0d8d-4213-b592-0ee3cad840ff}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\Provider%28H%29">
-      <UniqueIdentifier>{a729fe76-5222-4069-80b6-bba7ecf179b3}</UniqueIdentifier>
+    <Filter Include="Исходные файлы\Objects%28CPP%29">
+      <UniqueIdentifier>{c4aa5dce-2d36-4226-a15b-3ef9f7491c28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Window%28CPP%29">
+      <UniqueIdentifier>{8fc8e90a-8617-4484-b4bd-03a022a90397}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Objects%28H%29\SFML_Object_Decorators%28H%29">
+      <UniqueIdentifier>{a151f723-445e-4075-81e5-68e680a31457}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Objects%28CPP%29\SFML_Object_Decorators%28CPP%29">
+      <UniqueIdentifier>{e659d7d6-00c9-4ba2-841c-500521463b20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Factories%28CPP%29">
+      <UniqueIdentifier>{c3e7db3f-9289-4132-bc70-8c734dbe13f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Factories%28H%29">
+      <UniqueIdentifier>{06ea4117-eec0-4b34-82f9-781d38e2ae41}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Task2.cpp">
+    <ClCompile Include="Code\BoundingBox.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="BoundingBox.cpp">
+    <ClCompile Include="Code\Exceptions.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Exceptions.cpp">
+    <ClCompile Include="Code\Point2d.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectFactory.cpp">
+    <ClCompile Include="Code\Settings.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Point2d.cpp">
+    <ClCompile Include="Code\Task2.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Settings.cpp">
+    <ClCompile Include="Code\WDraw.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="WDraw.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Rectangle.cpp">
-      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="BaseObject.cpp">
-      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Circle.cpp">
-      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="CircularArc.cpp">
-      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Polygon.cpp">
-      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Polyline.cpp">
-      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="Unknown.cpp">
-      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
-    </ClCompile>
-    <ClCompile Include="ArrayDataProvider.cpp">
+    <ClCompile Include="Code\ArrayDataProvider.cpp">
       <Filter>Исходные файлы\Provider%28CPP%29</Filter>
     </ClCompile>
-    <ClCompile Include="FileDataProvider.cpp">
+    <ClCompile Include="Code\FileDataProvider.cpp">
       <Filter>Исходные файлы\Provider%28CPP%29</Filter>
     </ClCompile>
-    <ClCompile Include="IDataProvider.cpp">
+    <ClCompile Include="Code\IDataProvider.cpp">
       <Filter>Исходные файлы\Provider%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\BaseObject.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Circle.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\CircularArc.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Polygon.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Polyline.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Rectangle.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Unknown.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\SFMLWindowFacade.cpp">
+      <Filter>Исходные файлы\Window%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\SFMLCircleDecorator.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29\SFML_Object_Decorators%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\SFMLCircularArcDecorator.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29\SFML_Object_Decorators%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\SFMLPolygonDecorator.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29\SFML_Object_Decorators%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\SFMLPolylineDecorator.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29\SFML_Object_Decorators%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\SFMLRectangleDecorator.cpp">
+      <Filter>Исходные файлы\Objects%28CPP%29\SFML_Object_Decorators%28CPP%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\ObjectFactory.cpp">
+      <Filter>Исходные файлы\Factories%28CPP%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="BoundingBox.h">
+    <ClInclude Include="Code\BoundingBox.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Exceptions.h">
+    <ClInclude Include="Code\Exceptions.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectFactory.h">
+    <ClInclude Include="Code\Point2d.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Point2d.h">
+    <ClInclude Include="Code\resource.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Settings.h">
+    <ClInclude Include="Code\Settings.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="WDraw.h">
+    <ClInclude Include="Code\WDraw.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="BaseObject.h">
-      <Filter>Файлы заголовков\Objects%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Circle.h">
-      <Filter>Файлы заголовков\Objects%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="CircularArc.h">
-      <Filter>Файлы заголовков\Objects%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Polygon.h">
-      <Filter>Файлы заголовков\Objects%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Polyline.h">
-      <Filter>Файлы заголовков\Objects%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Rectangle.h">
-      <Filter>Файлы заголовков\Objects%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="Unknown.h">
-      <Filter>Файлы заголовков\Objects%28H%29</Filter>
-    </ClInclude>
-    <ClInclude Include="ArrayDataProvider.h">
+    <ClInclude Include="Code\ArrayDataProvider.h">
       <Filter>Файлы заголовков\Provider%28H%29</Filter>
     </ClInclude>
-    <ClInclude Include="FileDataProvider.h">
+    <ClInclude Include="Code\FileDataProvider.h">
       <Filter>Файлы заголовков\Provider%28H%29</Filter>
     </ClInclude>
-    <ClInclude Include="IDataProvider.h">
+    <ClInclude Include="Code\IDataProvider.h">
       <Filter>Файлы заголовков\Provider%28H%29</Filter>
     </ClInclude>
+    <ClInclude Include="Code\BaseObject.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Circle.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\CircularArc.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Polygon.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Polyline.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Rectangle.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Unknown.h">
+      <Filter>Файлы заголовков\Objects%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\Constants.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\SFMLWindowFacade.h">
+      <Filter>Файлы заголовков\Window%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\SFMLCircleDecorator.h">
+      <Filter>Файлы заголовков\Objects%28H%29\SFML_Object_Decorators%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\SFMLCircularArcDecorator.h">
+      <Filter>Файлы заголовков\Objects%28H%29\SFML_Object_Decorators%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\SFMLPolylineDecorator.h">
+      <Filter>Файлы заголовков\Objects%28H%29\SFML_Object_Decorators%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\SFMLPolygonDecorator.h">
+      <Filter>Файлы заголовков\Objects%28H%29\SFML_Object_Decorators%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\SFMLRectangleDecorator.h">
+      <Filter>Файлы заголовков\Objects%28H%29\SFML_Object_Decorators%28H%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\ObjectFactory.h">
+      <Filter>Файлы заголовков\Factories%28H%29</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Task2.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

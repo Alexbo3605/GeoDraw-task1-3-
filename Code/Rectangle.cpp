@@ -35,6 +35,13 @@ Point2d* Rectangle::get_Rectangle_Bottom_Right_Point() const
 	return m_Bottom_Right_Point;
 }
 
+void Rectangle::draw()
+{
+	std::cout << "Rectangle:" << std::endl;
+	std::cout << "Top left corner: (" << m_Top_Left_Point->x() << ", " << m_Top_Left_Point->y() << ")" << std::endl;
+	std::cout << "Bottom right corner: (" << m_Bottom_Right_Point->x() << ", " << m_Bottom_Right_Point->y() << ")" << std::endl;
+}
+
 void Rectangle::serialize(IDataProvider::IDataReader* dr) const
 {
 	static constexpr int RECTANGLE_SIZE = 4;

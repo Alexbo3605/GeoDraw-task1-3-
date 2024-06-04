@@ -16,12 +16,7 @@ public:
 	double get_CircularArc_Start_Angle() const;
 	double get_CircularArc_End_Angle() const;
 
-	virtual void showAll() override {
-		std::cout << "Circular Arc:" << std::endl;
-		std::cout << "Center: (" << m_center->x() << ", " << m_center->y() << ")" << std::endl;
-		std::cout << "Radius: " << m_radius << std::endl;
-		std::cout << "Start Angle: " << m_start_Angle << ", End Angle: " << m_end_Angle << std::endl;
-	}
+	virtual void draw() override;
 	virtual void serialize(IDataProvider::IDataReader* dr) const override;
 	virtual void deserialize(IDataProvider::IDataReader* dr, int size) override;
 

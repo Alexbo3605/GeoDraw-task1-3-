@@ -18,7 +18,7 @@ public:
     virtual ~BaseObject(void);
 
     int get_Id() const;
-    virtual void showAll() = 0;
+    virtual void draw() = 0;
     virtual BoundingBox AABB() const = 0;
 
     virtual void serialize(IDataProvider::IDataReader* dr) const = 0;

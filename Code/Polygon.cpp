@@ -37,6 +37,15 @@ int Polygon::get_Size() const
 	return m_size;
 }
 
+void Polygon::draw()
+{
+	std::cout << "Polygon:" << std::endl;
+	std::cout << "Number of vertices: " << m_size << std::endl;
+	for (size_t i = 0; i < m_size; ++i) {
+		std::cout << "Vertex " << i + 1 << ": (" << m_points[i]->x() << ", " << m_points[i]->y() << ")" << std::endl;
+	}
+}
+
 void Polygon::serialize(IDataProvider::IDataReader* dr) const
 {
 	//write object size

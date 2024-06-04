@@ -34,6 +34,13 @@ double Circle::get_Circle_Radius() const
 	return m_radius;
 }
 
+void Circle::draw()
+{
+	std::cout << "Circle:" << std::endl;
+	std::cout << "Center: (" << m_center->x() << ", " << m_center->y() << ")" << std::endl;
+	std::cout << "Radius: " << m_radius << std::endl;
+}
+
 void Circle::serialize(IDataProvider::IDataReader* dr) const
 {
 	static constexpr int CIRCLE_SIZE = 3;

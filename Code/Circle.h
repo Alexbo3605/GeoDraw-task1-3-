@@ -14,11 +14,7 @@ public:
 	Point2d* get_Circle_Center() const;
 	double get_Circle_Radius() const;
 
-	virtual void showAll() override {
-		std::cout << "Circle:" << std::endl;
-		std::cout << "Center: (" << m_center->x() << ", " << m_center->y() << ")" << std::endl;
-		std::cout << "Radius: " << m_radius << std::endl;
-	}
+	virtual void draw() override;
 	virtual void serialize(IDataProvider::IDataReader* dr) const override;
 	virtual void deserialize(IDataProvider::IDataReader* dr, int size) override;
 
